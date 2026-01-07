@@ -1,0 +1,69 @@
+Data Leverager – Power Query ETL Project Explanation
+
+1. Project Overview
+This project is created using Power BI Power Query Editor.
+The main objective of this project is to perform ETL (Extract, Transform, Load) operations on Excel data.
+The focus is only on data cleaning, transformation, and integration.
+
+2. Data Sources Used
+The following data sources are used in this project:
+Sales Data (Folder Source):
+sales_jan.xlsx
+sales_feb.xlsx
+sales_mar.xlsx
+Employee Data (Excel File):
+employees.xlsx
+
+3. Data Extraction
+The sales files were loaded using the Folder connector in Power BI.
+All monthly sales files were combined using Append Queries from Folder into a single table.
+The employee data was loaded separately using the Excel connector.
+
+4. Data Cleaning and Preparation
+The following data cleaning steps were applied in Power Query:
+Removed blank rows and unnecessary columns
+Promoted the first row as headers
+Renamed columns to meaningful names
+Changed data types to correct formats (Date, Number, Text)
+Removed duplicate and null values where required
+
+5. Text Transformations
+Text transformation tools were applied to the Employee Name column:
+Converted text to uppercase
+Removed extra spaces using Trim
+Removed unwanted characters using Clean
+This ensured consistent and clean text data.
+
+6. Numeric Transformations
+The Sales Amount column was rounded to two decimal places
+A new Profit column was created based on Sales Amount calculation
+
+7. Date and Time Transformations
+From the Order Date column, the following new columns were created:
+Year
+Month
+Day
+Quarter
+
+8. Conditional Column (Sales Category)
+A new column named Sales Category was created using conditional logic:
+Sales Amount greater than or equal to 50000 → High
+Sales Amount greater than or qual to 35000 → Medium
+Sales Amount else  → Low
+This was created using the Conditional Column option in Power Query.
+
+9. Index Columns
+index columns were added:
+One index starting from 1
+These columns help in record tracking.
+
+10. Merging and Appending
+Sales data was merged with Employee data using Employee ID
+Employee details such as Name, Department, and Region were added to the sales table
+Monthly sales data was already combined using folder append
+
+11. Grouping and Aggregation
+Data was grouped by Region to calculate:
+Total Sales
+Average Order Value
+Transaction Count
